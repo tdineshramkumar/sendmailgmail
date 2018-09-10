@@ -10,6 +10,7 @@ from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.common.keys import Keys
 from getpass import getpass
 import time
 import logging
@@ -39,14 +40,16 @@ try:
 
     # Enter username details and click next
     driver.find_element_by_id("identifierId").send_keys(username)
-    driver.find_element_by_id('identifierNext').click()
+    # driver.find_element_by_id('identifierNext').click()
+    driver.find_element_by_id("identifierId").send_keys(Keys.ENTER)
     logger.info("Entered Username Details")
 
     # Wait for password page to load
     # Then enter password and click next
     WebDriverWait(driver, WAIT_TIMEOUT).until(EC.visibility_of_element_located((By.NAME, "password")))
     driver.find_element_by_name("password").send_keys(password)
-    driver.find_element_by_id("passwordNext").click()
+    driver.find_element_by_name("password").send_keys(Keys.ENTER)
+    # driver.find_element_by_id("passwordNext").click()
     logger.info("Entered Password Details")
 
     # Wait for COMPOSE button to load and then click it
