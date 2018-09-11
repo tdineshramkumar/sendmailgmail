@@ -28,6 +28,8 @@ SERVER_PORT = 465
 email_username = from_address = input("Username: ") 
 email_password = getpass("Password: ")
 to_addresses = get_input_list('To:')
+if not to_addresses:    # if no to address specified 
+    to_addresses = [from_address]   # use the default address
 cc_addresses = get_input_list('Cc:')
 bcc_addresses = get_input_list('Bcc:')
 subject = input("Subject: ")
