@@ -7,3 +7,5 @@
 3. Extract geckodriver and update PATH
 #### Firefox
 ##### NOTE: To fully automate take inputs as command line arguments
+# send\_mail[2,3].py
+## Send Mail via command line
