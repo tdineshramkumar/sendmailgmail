@@ -1,4 +1,4 @@
-# send\_mail.py
+# automate\_mail.py
 ## Automate send mail in GMAIL
 ### Requirements
 #### selenium
